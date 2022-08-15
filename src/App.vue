@@ -1,19 +1,11 @@
 <script setup lang="ts">
-import request from './utils/request';
-import { onMounted } from 'vue';
-
-onMounted(async () => {
-  const res = await request.get('/home/index');
-  console.log(res);
-});
+import { RouterView, RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <h1>Vue3+TS小兔鲜儿</h1>
+  <ul>
+    <li><RouterLink to="/"></RouterLink></li>
+    <li><RouterLink to="/login"></RouterLink></li>
+  </ul>
+  <RouterView />
 </template>
-<style lang="less" scoped>
-h1 {
-  background-color: @warnColor;
-  .hoverShadow();
-}
-</style>
